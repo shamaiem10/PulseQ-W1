@@ -83,4 +83,4 @@ You can view a working demo of this project here:
 ![Setup](https://github.com/shamaiem10/PulseQ-W1/blob/main/CLI-SS2.png)
 
 
-![Setup](https://github.com/shamaiem10/PulseQ-W1/blob/main/ProjectSetup.png)
+![Setup](https://github.com/shamaiem10/PulseQ-W1/blob/main/ProjectStartup.png)
