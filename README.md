@@ -77,10 +77,10 @@ All data lives inside components; no services or backend are used yet.
 You can view a working demo of this project here:
 
 
-![Task List](assets/screenshots/task-list.png)
+![Setup](https://github.com/shamaiem10/PulseQ-W1/blob/main/CLI-SS1.png)
 
 
-![Task Card](assets/screenshots/task-card.png)
+![Setup](https://github.com/shamaiem10/PulseQ-W1/blob/main/CLI-SS2.png)
 
 
-![Navbar](assets/screenshots/navbar.png)
+![Setup](https://github.com/shamaiem10/PulseQ-W1/blob/main/ProjectSetup.png)
