@@ -75,7 +75,7 @@ All data lives inside components; no services or backend are used yet.
 🎥 Demo & Screenshots
 
 You can view a working demo of this project here:
-https://drive.google.com/file/d/1U-sqgQCD8rUlh-XvwgWLILRmNIX6B5uz/view?usp=sharing
+[Demo](https://drive.google.com/file/d/1U-sqgQCD8rUlh-XvwgWLILRmNIX6B5uz/view?usp=sharing)
 
 
 ![Setup](https://github.com/shamaiem10/PulseQ-W1/blob/main/CLI-SS1.png)
