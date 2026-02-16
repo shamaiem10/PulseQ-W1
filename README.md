@@ -85,3 +85,84 @@ You can view a working demo of this project here:
 
 
 ![Setup](https://github.com/shamaiem10/PulseQ-W1/blob/main/ProjectStartup.png)
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# PulseQ - Week 2: Component Communication & State Handling
+
+## Overview
+In Week 2, the focus was on making the UI **modular and interactive** using Angular's component-based architecture.  
+The goal was to ensure **proper data flow** between components and clean, maintainable code.
+
+
+## Objective
+Make the UI modular and interactive using proper Angular **data flow** and **component communication**.
+
+
+## Task Description
+- Componentize the UI into reusable components.
+- Ensure tasks flow from **parent to child** and actions bubble **back up**.
+- Implement event handling and state updates in a **clean Angular way**.
+
+
+## Requirements Implemented
+1. **Task Data Management**
+   - Moved all task data to `TaskListComponent`.
+   - Defined a `Task` interface to ensure type safety:
+     ```ts
+     export interface Task {
+       id: number;
+       title: string;
+       completed: boolean;
+     }
+     ```
+
+2. **Parent → Child Communication**
+   - Passed task data from `TaskListComponent` to `TaskCardComponent` using `@Input()`.
+     ```ts
+     @Input() task!: Task;
+     ```
+
+3. **Child → Parent Communication**
+   - Emitted events from `TaskCardComponent` to `TaskListComponent` using `@Output()`:
+     ```ts
+     @Output() markComplete = new EventEmitter<number>();
+     @Output() deleteTask = new EventEmitter<number>();
+     ```
+
+4. **UI Rendering**
+   - Used `*ngFor` to loop through tasks and render each `TaskCardComponent`.
+   - Used `*ngIf` to conditionally display UI elements based on task state.
+
+5. **Action Handling**
+   - Mark task complete → updates task state in `TaskListComponent`.
+   - Delete task → removes the task from the task list.
+
+
+## Constraints Followed
+- No direct DOM manipulation (used Angular bindings only).
+- No duplicated UI logic (logic handled in parent component, presentation in child).
+- Code is clean, modular, and readable.
+
+
+## How Components Communicate
+1. **Parent → Child**: via `@Input()`
+2. **Child → Parent**: via `@Output()` and `EventEmitter`
+3. **State Updates**: managed in the parent (`TaskListComponent`) and reflected in the child (`TaskCardComponent`).
+
+
+## Folder Structure
+```bash
+taskflow/
+├─ task-list/
+│ ├─ task-list.component.ts
+│ ├─ task-list.component.html
+│ └─ task-list.component.css
+├─ task-card/
+│ ├─ task-card.component.ts
+│ ├─ task-card.component.html
+│ └─ task-card.component.css
+├─ models/
+│ └─ task.model.ts
+└─ README.md
+```
