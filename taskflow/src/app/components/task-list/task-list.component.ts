@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TaskCardComponent } from '../task-card/task-card.component';
+import { Task } from '../../models/task.model';
 
 @Component({
   selector: 'app-task-list',
@@ -11,7 +12,7 @@ import { TaskCardComponent } from '../task-card/task-card.component';
 })
 export class TaskListComponent {
 
-  tasks = [
+  tasks: Task[] = [
     {
       title: 'Learn Angular',
       description: 'Understand standalone components',
@@ -28,5 +29,16 @@ export class TaskListComponent {
       status: 'Pending'
     }
   ];
+
+  toggleStatus(index: number) {
+    this.tasks[index].status =
+      this.tasks[index].status === 'Pending'
+        ? 'Completed'
+        : 'Pending';
+  }
+
+  deleteTask(index: number) {
+    this.tasks.splice(index, 1);
+  }
 
 }

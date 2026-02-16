@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Task } from '../../models/task.model';
 
 @Component({
   selector: 'app-task-card',
@@ -10,11 +11,17 @@ import { CommonModule } from '@angular/common';
 })
 export class TaskCardComponent {
 
-  @Input() task: any;
+  @Input() task!: Task;
 
-  toggleStatus() {
-    this.task.status =
-      this.task.status === 'Pending' ? 'Completed' : 'Pending';
+  @Output() toggle = new EventEmitter<void>();
+  @Output() delete = new EventEmitter<void>();
+
+  onToggle() {
+    this.toggle.emit();
+  }
+
+  onDelete() {
+    this.delete.emit();
   }
 
 }
