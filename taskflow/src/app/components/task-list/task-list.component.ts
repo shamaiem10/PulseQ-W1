@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TaskCardComponent } from '../task-card/task-card.component';
-import { Task } from '../../models/task.model';
+import { TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'app-task-list',
@@ -12,33 +12,18 @@ import { Task } from '../../models/task.model';
 })
 export class TaskListComponent {
 
-  tasks: Task[] = [
-    {
-      title: 'Learn Angular',
-      description: 'Understand standalone components',
-      status: 'Pending'
-    },
-    {
-      title: 'Build TaskFlow UI',
-      description: 'Create task list and task cards',
-      status: 'Completed'
-    },
-    {
-      title: 'Submit Assignment',
-      description: 'Push code to GitHub',
-      status: 'Pending'
-    }
-  ];
+  constructor(private taskService: TaskService) {}
+
+
+  get tasks() {
+    return this.taskService.getTasks();
+  }
 
   toggleStatus(index: number) {
-    this.tasks[index].status =
-      this.tasks[index].status === 'Pending'
-        ? 'Completed'
-        : 'Pending';
+    this.taskService.toggleStatus(index);
   }
 
   deleteTask(index: number) {
-    this.tasks.splice(index, 1);
+    this.taskService.deleteTask(index);
   }
-
 }
