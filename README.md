@@ -166,3 +166,70 @@ taskflow/
 │ └─ task.model.ts
 └─ README.md
 ```
+
+
+# PulseQ - Week 3: Routing & Forms (UX Flow)
+
+## Overview
+In Week 3, the app was converted into a **multi-page Angular SPA** with routing and a task creation form.  
+Users can navigate between pages, create tasks, and see updates instantly.
+
+---
+
+## Pages & Routing
+- `/dashboard` → Landing page with navigation buttons  
+- `/tasks` → Task list  
+- `/tasks/new` → Task creation form  
+
+**Routing configured in `app.routes.ts`** and rendered via `<router-outlet>`.
+
+---
+
+## Task Form
+- Template-driven form with **Title** and **Description** (both required).  
+- Validation prevents submission of empty fields.  
+- On submit:
+  - Task added to shared `TaskService`
+  - Redirect to `/tasks`
+  - Newly created task appears immediately
+
+---
+
+## Task Management
+- `TaskService` holds all tasks for persistent SPA state.
+- `TaskListComponent` displays tasks using `TaskCardComponent`.
+- Users can:
+  - Toggle task status (Pending/Completed)  
+  - Delete tasks
+
+---
+
+## UI Theme
+- Professional **black + pastel pink** design  
+- Dark background, soft card shadows, smooth hover effects  
+- Responsive, clean layout
+
+---
+
+## Folder Structure
+```bash
+taskflow/
+├─ app/
+│  ├─ components/
+│  │  ├─ navbar/
+│  │  ├─ task-card/
+│  │  └─ task-list/
+│  ├─ pages/
+│  │  ├─ dashboard/
+│  │  └─ task-form/
+│  ├─ services/
+│  │  └─ task.service.ts
+│  ├─ models/
+│  │  └─ task.model.ts
+│  ├─ app.routes.ts
+│  └─ app.component.ts
+├─ main.ts
+└─ styles.css
+```
+You can view a working demo of this task here:
+[Demo](https://drive.google.com/file/d/1U-sqgQCD8rUlh-XvwgWLILRmNIX6B5uz/view?usp=sharing)
