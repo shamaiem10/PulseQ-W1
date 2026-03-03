@@ -1,0 +1,11 @@
+<div *ngIf="loading" class="loading">Loading tasks...</div>
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+<div class="task-list">
+  <app-task-card
+    *ngFor="let task of tasks"
+    [task]="task"
+    (toggle)="toggleStatus(task)"
+    (delete)="deleteTask(task)">
+  </app-task-card>
+</div>

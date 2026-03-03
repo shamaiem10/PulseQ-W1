@@ -1,0 +1,26 @@
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.task-list {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.loading {
+  text-align: center;
+  font-weight: bold;
+  margin: 20px;
+  color: #ff8fcf;
+}
+
+.error {
+  text-align: center;
+  font-weight: bold;
+  margin: 20px;
+  color: red;
+}
