@@ -234,3 +234,50 @@ taskflow/
 You can view a working demo of this task here:
 [Demo](https://drive.google.com/file/d/1dJTpSXuTyHt2xd6fvUJqfBJPDLu0dk8G/view?usp=sharing)
 
+----
+# PulseQ - Week 4: MEAN Stack
+
+
+## API Endpoints
+
+Base URL: `http://localhost:3000/api`
+
+| Method | Endpoint | Description | Body |
+|---|---|---|---|
+| GET | `/tasks` | Get all tasks | — |
+| POST | `/tasks` | Create a task | `{ title, description, status }` |
+| PUT | `/tasks/:id` | Update a task | `{ title?, description?, status? }` |
+| DELETE | `/tasks/:id` | Delete a task | — |
+
+### Example Task Object
+```json
+{
+  "_id": "64abc123...",
+  "title": "Fix login bug",
+  "description": "Users cant log in on mobile",
+  "status": "Pending",
+  "createdAt": "2024-01-15T10:30:00.000Z"
+}
+```
+
+## Data Flow
+```
+User Action (click/submit)
+        ↓
+Angular Component (task-list / task-form)
+        ↓
+TaskService — HTTP call via HttpClient
+        ↓
+Express Route (/api/tasks)
+        ↓
+Mongoose Model (Task.js)
+        ↓
+MongoDB Database
+        ↓
+Response flows back up the chain
+        ↓
+Component updates the UI
+```
+You can view a working demo of this task here:
+[Demo](https://drive.google.com/file/d/1iyKAvhvIYeDkrL-evygmJjWxQKw3nafF/view?usp=sharing)
+
