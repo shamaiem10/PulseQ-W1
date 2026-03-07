@@ -280,4 +280,39 @@ Component updates the UI
 ```
 You can view a working demo of this task here:
 [Demo](https://drive.google.com/file/d/1iyKAvhvIYeDkrL-evygmJjWxQKw3nafF/view?usp=sharing)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# PulseQ - Week 5: SOLID Application and Code Refactoring
 
+## Folder Structure
+```bash
+backend/
+├── controllers/
+│    taskController.js
+├── services/
+│    taskService.js
+├── repositories/
+│    taskRepository.js
+├── routes/
+│    tasks.js
+├── models/
+│    Task.js
+├── config/
+│    db.js
+└── server.js
+```
+
+## Description:
+
+- Routes: Only define endpoints
+
+- Controllers: Handle request and response
+
+- Services: Contain business logic
+
+- Repositories: Handle database queries
+
+- Models: Define schema
+
+- Config: DB connection
+
+This setup applies SRP and DIP, reduces logic in routes, and ensures maintainable, scalable backend architecture.
